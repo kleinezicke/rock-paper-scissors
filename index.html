@@ -9,21 +9,26 @@
 <body>
     <script>
         function computerPlay() {
+
             let result = Math.floor((Math.random()*3) + 1);
-            switch(result) {
+            let answer = "?";
+
+            switch(result) {            
                 case 1:
-                    console.log("Rock");
+                    answer = "Rock";
                     break;
                 case 2: 
-                    console.log("Paper");
+                    answer = "Paper";
                     break;
                 case 3: 
-                    console.log("Scissors")
-            return result;
+                    answer = "Scissors";
+                    break;
             }
+            return answer;
         }
         
-        
+        console.log(computerPlay());
+
     </script>
 </body>
 </html>
