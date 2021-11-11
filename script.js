@@ -81,17 +81,17 @@ function playRound(playerSelection)
     }
 }
 
-const rockBtn = document.querySelector("#rockbtn");
-rockBtn.addEventListener('click', function(e) {
-    playRound("Rock");
-})
-
-const paperBtn = document.querySelector("#paperbtn");
-paperBtn.addEventListener("click", function (e) {
-    playRound("Paper");
-})
-
-const scissorsBtn = document.querySelector("#scissorsbtn");
-scissorsBtn.addEventListener("click", function(e) {
-    playRound("Scissors");
-})
+    const rockBtn = document.querySelector("#rockbtn");
+    rockBtn.addEventListener('click', function(e) {
+        playRound("Rock");
+    })
+    
+    const paperBtn = document.querySelector("#paperbtn");
+    paperBtn.addEventListener("click", function (e) {
+        playRound("Paper");
+    })
+    
+    const scissorsBtn = document.querySelector("#scissorsbtn");
+    scissorsBtn.addEventListener("click", function(e) {
+        playRound("Scissors");
+    })
