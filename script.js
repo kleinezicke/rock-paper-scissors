@@ -107,3 +107,7 @@ function playRound(playerSelection)
         computerScoreDisplay.textContent = "0";
         playerScoreDisplay.textContent = "0";
     })
+
+    function reset() {
+        
+    }
