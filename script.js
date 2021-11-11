@@ -1,4 +1,5 @@
 const resultDiv = document.querySelector("#result");
+const compouterDiv = document.querySelector("#computer")
 
 let computerScore = 0;
 let playerScore = 0;
@@ -19,6 +20,7 @@ function computerPlay()
             answer = "Scissors";
             break;
     }
+    compouterDiv.textContent = answer;
     return answer;
 }
 
