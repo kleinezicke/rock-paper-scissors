@@ -1,5 +1,7 @@
 const resultDiv = document.querySelector("#result");
-const compouterDiv = document.querySelector("#computer")
+const compouterDiv = document.querySelector("#computer");
+const playerScoreDisplay = document.querySelector("#playerscore");
+const computerScoreDisplay = document.querySelector("#computerscore");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -71,12 +73,14 @@ function playRound(playerSelection)
     function loss(playerSelection) {
         result = `You lose! ${computerSelection} beats ${playerSelection}`;
         computerScore++;
+        computerScoreDisplay.textContent = `${computerScore}`;
         return result;
     }
 
     function win(playerSelection) {
         result = `You win! ${playerSelection} beats ${computerSelection}`;
         playerScore ++;
+        playerScoreDisplay.textContent = `${playerScore}`;
         return result;
     }
 }
@@ -96,8 +100,10 @@ function playRound(playerSelection)
         playRound("Scissors");
     })
 
-    const resetBtn = document.querySelector("resetbtn");
+    const resetBtn = document.querySelector("#resetbtn");
     resetBtn.addEventListener("click", function(e) {
         playerScore = 0;
         computerScore = 0;
+        computerScoreDisplay.textContent = "0";
+        playerScoreDisplay.textContent = "0";
     })
