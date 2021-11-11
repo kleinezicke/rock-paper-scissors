@@ -115,4 +115,5 @@ function playRound(playerSelection)
         computerScore = 0;
         computerScoreDisplay.textContent = "0";
         playerScoreDisplay.textContent = "0";
+        resetBtn.classList.add("hidden");
     }

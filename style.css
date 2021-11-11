@@ -1,9 +1,11 @@
 :root {
-    --main-bg-color: #FFFCD9;
+    --bg-color-1: lightgrey;
+    --bg-color-2: white;
 }
 
 body {
-    background-color: var(--main-bg-color);
+    background-color: var(--bg-color-1);
+    font-family: Palatino, "URW Palladio L", serif;
 }
 
 .hidden {
@@ -20,9 +22,16 @@ h1 {
     align-items: center;
     margin: auto;
     width: 50%;
+    padding: 2em 0em;
+    background-color: var(--bg-color-2);
 }
 
 #scores {
     display: flex;
     justify-content: space-evenly;
+}
+
+#result-container {
+    text-align: center;
+    width: 40%;
 }
