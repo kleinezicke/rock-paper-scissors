@@ -95,3 +95,9 @@ function playRound(playerSelection)
     scissorsBtn.addEventListener("click", function(e) {
         playRound("Scissors");
     })
+
+    const resetBtn = document.querySelector("resetbtn");
+    resetBtn.addEventListener("click", function(e) {
+        playerScore = 0;
+        computerScore = 0;
+    })
