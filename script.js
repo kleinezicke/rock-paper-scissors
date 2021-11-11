@@ -32,36 +32,39 @@ function playRound(playerSelection)
     let result;
     console.log(computerSelection);
 
-    if (playerSelection == computerSelection)
-    {
-        result = "Tie!"
-    }
-    else
-    {
-            switch(playerSelection)
+    if (playerScore != 5 && computerScore != 5) {
+        
+        if (playerSelection == computerSelection)
         {
-            case "Rock": 
-                if (computerSelection == "Paper")
-                        result = loss(playerSelection);
-                else
-                    result = win(playerSelection);
-
-                break;
-            case "Paper": 
-                if (computerSelection == "Scissors")
-                    result = loss(playerSelection);
-                else
-                    result = win(playerSelection);
-                break;
-            case "Scissors": 
-                if (computerSelection == "Rock")
-                    result = loss(playerSelection);
-                else
-                    result = win(playerSelection);
-                break;
+            result = "Tie!"
         }
-    }
-    resultDiv.textContent = result;
+        else
+        {
+                switch(playerSelection)
+            {
+                case "Rock": 
+                    if (computerSelection == "Paper")
+                            result = loss(playerSelection);
+                    else
+                        result = win(playerSelection);
+    
+                    break;
+                case "Paper": 
+                    if (computerSelection == "Scissors")
+                        result = loss(playerSelection);
+                    else
+                        result = win(playerSelection);
+                    break;
+                case "Scissors": 
+                    if (computerSelection == "Rock")
+                        result = loss(playerSelection);
+                    else
+                        result = win(playerSelection);
+                    break;
+            }
+        }
+        resultDiv.textContent = result;
+        }
 
     if (playerScore == 5) {
         resultDiv.textContent = "Congratulations! You win the game!"
