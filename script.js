@@ -33,7 +33,7 @@ function playRound(playerSelection)
     console.log(computerSelection);
 
     if (playerScore != 5 && computerScore != 5) {
-        
+
         if (playerSelection == computerSelection)
         {
             result = "Tie!"
@@ -68,9 +68,11 @@ function playRound(playerSelection)
 
     if (playerScore == 5) {
         resultDiv.textContent = "Congratulations! You win the game!"
+        resetBtn.classList.remove("hidden");
     }
     else if (computerScore == 5) {
         resultDiv.textContent = "You lost the game! :( Better Luck next time"
+        resetBtn.classList.remove("hidden");
     }
 
     function loss(playerSelection) {
