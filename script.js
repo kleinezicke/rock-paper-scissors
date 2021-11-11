@@ -1,3 +1,6 @@
+let computerScore = 0;
+let playerScore = 0;
+
 function computerPlay() 
 {
     let result = Math.floor((Math.random()*3) + 1);
@@ -53,35 +56,4 @@ function playRound()
         }
     }
     return result;
-}
-
-function game()
-{
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++)
-    {
-        let roundResult = playRound();
-        console.log(roundResult);
-
-        roundResultsplit = roundResult.split("!");
-
-        switch(roundResultsplit[0])
-        {
-            case "You win": 
-                playerScore++;
-                break;
-            case "You lose":
-                computerScore++;
-                break;
-        }                
-    }
-
-    if (playerScore > computerScore)
-        console.log("You win the game!");
-    else if (playerScore < computerScore)
-        console.log("You lose the game!");
-    else
-        console.log("It's a tie!");
 }
