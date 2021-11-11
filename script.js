@@ -102,12 +102,12 @@ function playRound(playerSelection)
 
     const resetBtn = document.querySelector("#resetbtn");
     resetBtn.addEventListener("click", function(e) {
+        reset();
+    })
+
+    function reset() {
         playerScore = 0;
         computerScore = 0;
         computerScoreDisplay.textContent = "0";
         playerScoreDisplay.textContent = "0";
-    })
-
-    function reset() {
-        
     }
