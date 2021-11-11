@@ -10,13 +10,13 @@ function computerPlay()
 
     switch(result) {            
         case 1:
-            answer = "rock";
+            answer = "Rock";
             break;
         case 2: 
-            answer = "paper";
+            answer = "Paper";
             break;
         case 3: 
-            answer = "scissors";
+            answer = "Scissors";
             break;
     }
     return answer;
@@ -36,40 +36,60 @@ function playRound(playerSelection)
     {
             switch(playerSelection)
         {
-            case "rock": 
-                if (computerSelection == "paper")
-                    result = "You lose! Paper beats Rock";
+            case "Rock": 
+                if (computerSelection == "Paper")
+                        result = loss(playerSelection);
                 else
-                    result = "You win! Rock beats Scissors";
+                    result = win(playerSelection);
+
                 break;
-            case "paper": 
-                if (computerSelection == "scissors")
-                    result = "You lose! Scissors beats Paper";
+            case "Paper": 
+                if (computerSelection == "Scissors")
+                    result = loss(playerSelection);
                 else
-                    result = "You win! Paper beats Rock";
+                    result = win(playerSelection);
                 break;
-            case "scissors": 
-                if (computerSelection == "rock")
-                    result = "You lose! Rock beats Scissors";
+            case "Scissors": 
+                if (computerSelection == "Rock")
+                    result = loss(playerSelection);
                 else
-                    result = "You win! Scissors beats Paper";
+                    result = win(playerSelection);
                 break;
         }
     }
     resultDiv.textContent = result;
+
+    if (playerScore == 5) {
+        resultDiv.textContent = "Congratulations! You win the game!"
+    }
+    else if (computerScore == 5) {
+        resultDiv.textContent = "You lost the game! :( Better Luck next time"
+    }
+
+    function loss(playerSelection) {
+        result = `You lose! ${computerSelection} beats ${playerSelection}`;
+        computerScore++;
+        return result;
+    }
+
+    function win(playerSelection) {
+        result = `You win! ${playerSelection} beats ${computerSelection}`;
+        playerScore ++;
+        return result;
+    }
 }
 
 const rockBtn = document.querySelector("#rockbtn");
 rockBtn.addEventListener('click', function(e) {
-    playRound("rock");
+    playRound("Rock");
 })
 
 const paperBtn = document.querySelector("#paperbtn");
 paperBtn.addEventListener("click", function (e) {
-    playRound("paper");
+    playRound("Paper");
 })
 
 const scissorsBtn = document.querySelector("#scissorsbtn");
 scissorsBtn.addEventListener("click", function(e) {
-    playRound("scissors");
+    playRound("Scissors");
 })
