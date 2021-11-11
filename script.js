@@ -1,3 +1,5 @@
+const resultDiv = document.querySelector("#result");
+
 let computerScore = 0;
 let playerScore = 0;
 
@@ -20,9 +22,8 @@ function computerPlay()
     return answer;
 }
 
-function playRound()
+function playRound(playerSelection)
 {
-    const playerSelection = prompt("Rock Paper or Scissors?").toLocaleLowerCase();
     const computerSelection = computerPlay();
     let result;
     console.log(computerSelection);
@@ -55,5 +56,20 @@ function playRound()
                 break;
         }
     }
-    return result;
+    resultDiv.textContent = result;
 }
+
+const rockBtn = document.querySelector("#rockbtn");
+rockBtn.addEventListener('click', function(e) {
+    playRound("rock");
+})
+
+const paperBtn = document.querySelector("#paperbtn");
+paperBtn.addEventListener("click", function (e) {
+    playRound("paper");
+})
+
+const scissorsBtn = document.querySelector("#scissorsbtn");
+scissorsBtn.addEventListener("click", function(e) {
+    playRound("scissors");
+})
